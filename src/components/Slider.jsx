@@ -3,14 +3,16 @@ import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import { useState } from 'react';
 import { sliderItems } from '../data';
+import { mobile, tablet } from '../reponsive';
 
 const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  background-color: coral;
   position: relative;
   overflow: hidden;
+  ${mobile({ display: 'none' })};
+  ${tablet({ flexDirection: 'column' })};
 `;
 
 const Arrow = styled.div`
@@ -50,6 +52,7 @@ const ImgContainer = styled.div`
 `;
 const Image = styled.img`
   height: 80%;
+  ${tablet({ height: '95%', marginLeft: '20px' })};
   margin-left: 50px;
   display: flex;
   align-items: center;
@@ -58,6 +61,7 @@ const Image = styled.img`
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+  ${tablet({ flexDirection: 'column' })};
 `;
 const Title = styled.h1`
   font-size: 70px;
